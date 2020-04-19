@@ -2,7 +2,7 @@
 
 // Leur longueur doit être au minimum de 6 caractères. OK
 
-// Ils doivent contenir au moins un chiffre.
+// Ils doivent contenir au moins un chiffre. OK
 
 var form = document.querySelector("form");
 var info = document.getElementById("infoMdp");

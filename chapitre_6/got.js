@@ -1,3 +1,5 @@
+// L'objectif de cet exercice est d'afficher les personnages appartenant à une maison sélectionnée par l'utilisateur.
+
 // Liste de quelques maisons de Game of Thrones. Chaque maison a un code et un nom
 var maisons = [
     {
@@ -60,23 +62,19 @@ var select = document.getElementById("maison");         // Recupération de l'é
 
     select.addEventListener("change", function (e) {    // Gestion de l'évenement change sur le select
 
-        var persos = getPersonnages(e.target.value);    // Execution de la fonction ayant pour référence la valeur cible semectionnée
+        var persos = getPersonnages(e.target.value);    // Execution de la fonction ayant pour référence la valeur cible selectionnée
 
         var ul = document.getElementById("persos");     // Récupération de l'élement ul ayant l'id persos
 
         var li = document.createElement("li");          // Création des li
             li.innerHTML = persos;                      // Ajout du contenu du tableau retourné ayant pour référence la valeur de la cible selectionnée
 
-        ul.appendChild(li);                             // Ajout des li dans les ul
+            ul.appendChild(li);                             // Ajout des li dans les ul
 
         console.log(li.innerHTML);                      // Vérification du contenu des li
 
     });
 
 
-
-// au chargement de la page, puis qu'il affiche la liste des personnages associés
-//lorsque l'utilisateur sélectionne une maison dans la liste.
-
-   // var persos = getPersonnages(e.target.value);
-    // var persos = e.target.value;
+// var persos = getPersonnages(e.target.value);
+// var persos = e.target.value;
