@@ -20,8 +20,6 @@
         var titre = document.getElementById("titre");               // Modification du titre de la page
             titre.textContent = "Compte à rebourd terminé";
 
-        setInterval(deplacerBloc, 1000);                            // Active la function à la fin du compte à rebourd
-
         setTimeout(function () {
             titre.textContent = "Vous êtes sur la même page";        // Modification du titre au bout de 2 secondes
         }, 2000);
@@ -32,21 +30,34 @@
 // Animation du bloc
 
     var bloc = document.getElementById("bloc");
+    var cadre = document.getElementById("cadre");
     var vitesse = 7;                                                // Valeur de déplacement en pixel
+    var largeurCadre = parseFloat(getComputedStyle(bloc).width);
+    var compteArebourd = null;
 
     console.log(getComputedStyle(bloc).left);                       // Vérification de la position gauche du bloc
+    console.log(getComputedStyle(bloc).width);
 
     function deplacerBloc() {
 
-    var positionBloc = parseFloat(getComputedStyle(bloc).left);     // Conversion en nombre de la position gauche du bloc
+    var debutBloc = parseFloat(getComputedStyle(bloc).left);     // Conversion en nombre de la position gauche du bloc
+    var finBloc = parseFloat(getComputedStyle(cadre).width);     // Conversion en nombre de la position gauche du bloc
 
-    bloc.style.left = (positionBloc + vitesse) + "px";              // Déplacement du bloc sur sa gauche
+    if (debutBloc + largeurCadre <= finBloc ) {
 
-    requestAnimationFrame(deplacerBloc);                            // Demande au navigateur d'appeler deplacerBloc dès que possible
+        bloc.style.left = (debutBloc + vitesse) + "px";         // Déplacement du bloc sur sa gauche
+
+        compteArebourd = requestAnimationFrame(deplacerBloc);                    // Demande au navigateur d'appeler deplacerBloc dès que possible
+
+    } else {
+
+        cancelAnimationFrame(compteArebourd);                   // Annulation de l'animation
+    }
 
     console.log(getComputedStyle(bloc).left);                       // Vérification de la position gauche du bloc
     }
 
+    compteArebourd = requestAnimationFrame(deplacerBloc);                    // Demande au navigateur d'appeler deplacerBloc dès que possible
 
 
 
