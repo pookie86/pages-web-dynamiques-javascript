@@ -22,7 +22,7 @@
 
         setTimeout(function () {
             titre.textContent = "Vous êtes sur la même page";        // Modification du titre au bout de 2 secondes
-        }, 2000);
+        }, 1000);
     }
 }
     var compteArebourd = setInterval(diminutionCompteur, 1000);     // Appelle la fonction diminutionCompteur toutes les secondes
