@@ -1,0 +1,16 @@
+body {
+    background-image: linear-gradient(to right top, #272822, #4b4743, #6e6968, #908e8f, #b5b5b5);
+    height: 100vh;
+}
+
+#cadre {
+    border: 1px solid black;
+}
+
+#bloc {
+    width: 20px;
+    height: 40px;
+    background: black;
+    position: relative; /* Permettra de décaler le bloc */
+    left: 0px; /* Initialise la position gauche du bloc à déplacer */
+}
