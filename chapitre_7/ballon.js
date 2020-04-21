@@ -22,8 +22,8 @@ function deplacerBallon() {
         ballon.style.left = (debutBallon + vitesse) + "px";
     }
 
-    else {// (debutBallon + largeurCadre = finBallon)
-        // On inverse le sens de déplacement du ballon
+    else {
+     
         ballon.style.left = (finBallon - debutBallon) + "px";
     }
 
