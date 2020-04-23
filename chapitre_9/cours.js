@@ -17,4 +17,22 @@ ajaxGet("https://oc-jswebsrv.herokuapp.com/api/articles", function (reponse) {
         news.appenChild(titre);
         news.appenChild(contenu);
         });
-})
+
+});
+
+
+var premMinElt = document.getElementById("premMin");
+
+ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", function (reponse) {
+
+    var premierMinistre = JSON.parse(reponse);
+
+    var descriptionElt = document.createElement("p");
+        descriptionElt.textContent = premierMinistre.description;
+
+    var logoElt = document.createElement("img");
+        logoElt.src = premierMinistre.logo;
+
+    premMinElt.appendChild(descriptionElt);
+    premMinElt.appendChild(logoElt);
+});
