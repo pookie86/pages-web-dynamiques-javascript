@@ -39,10 +39,6 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
 });
 
 
-// choper la div pour afficher les infos
-
-    // var infos = document.getElementById("infos");
-
 // choper le form event Submit
     var form = document.querySelector("form");
 
@@ -81,12 +77,10 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
                 var lieu = document.createElement("p");
                     lieu.textContent = profil.location;
 
-                var information = image.outerHTML + nom.outerHTML + lien.outerHTML + repo.outerHTML + bio.outerHTML + lieu.outerHTML;
+                var info = image.outerHTML + nom.outerHTML + lien.outerHTML + repo.outerHTML + bio.outerHTML + lieu.outerHTML;
 
-                    card.innerHTML += "<div class='card'>" + information +"</div>";
-
+                    card.innerHTML += "<div class='card'>" + info +"</div>";
             });
-
         });
 
 
