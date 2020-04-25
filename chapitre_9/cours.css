@@ -1,0 +1,44 @@
+#infos {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+    
+    width: 50%;
+    
+    border-radius: 5px;
+    
+    margin-top: 5%;
+    
+    position: relative;
+    
+    border: solid red 1px;
+
+  }
+  
+#infos:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+#container{
+    margin-bottom: 5%;
+    border: solid blue 1px;
+
+}
+
+#avatar {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 7%;
+    border-radius: 5px;
+
+}
+
+.card {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  width: 20%;
+  display: block;
+  float: left;
+  margin-left: 5%;
+
+}
