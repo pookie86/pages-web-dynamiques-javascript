@@ -92,6 +92,43 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
         });
 
 
+var lettres = document.getElementById("lettres");
+var mots = document.getElementById("mots");
+
+var alphabet = ["A","B","C","D","E"];
+
+    alphabet.forEach(function (lettre) {
+
+        var a = document.createElement("a");
+            a.textContent = lettre;
+            a.href = "#";
+            a.style.color = "blue";
+
+            // Evenement click sur le lien
+            a.addEventListener("click",function () {
+
+                ajaxGet("https://oc-jswebsrv.herokuapp.com/api/lexique/" + lettre, function (reponse) {
+
+                var data = JSON.parse(reponse);
+                console.log(lexique);
+
+                    data.forEach (function (reponse) {
+
+                        var terme = document.createElement("h3");
+                            terme.textContent = reponse.term;
+
+                        var def = document.createElement("p");
+                            def.textContent = reponse.definition;
+
+                        var mot = terme.outerHTML + def.outerHTML;
+
+                    mots.innerHTML += mot;
+
+                    });
+            });
+    });
+    lettres.appendChild(a);
+});
 
 
 
