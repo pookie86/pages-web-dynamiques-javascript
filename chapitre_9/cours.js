@@ -40,14 +40,14 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
 });
 
 
-// choper le form event Submit
+// Récuperer le form event Submit
     var form = document.querySelector("form");
 
         form.addEventListener("submit", function (e) {
             // supprimer e par defaut
             e.preventDefault();
 
-            // choper le nom profil dans la valeur de l'element du form
+            // Récuperer le nom profil dans la valeur de l'element du form
             var pseudo = form.elements.profil.value; //name
 
             ajaxGet("https://api.github.com/users/" + pseudo, function (reponse) {
@@ -55,7 +55,7 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
                 // parse la reponse
                 var profil = JSON.parse(reponse);
 
-                // creer et choper img, name, company, blog, href
+                // Créer et Récuperer img, name, company, blog, href
                 var card = document.getElementById("card");
 
                 var image = document.createElement("img");
@@ -84,8 +84,6 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
                         a.textContent = "Voir";
                         a.href = profil.html_url;
                         button.appendChild(a);
-
-
 
                 var info = image.outerHTML + nom.outerHTML + repo.outerHTML + bio.outerHTML + lieu.outerHTML + button.outerHTML;
 
