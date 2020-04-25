@@ -33,6 +33,7 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
 
     var logo = document.createElement("img");
         logo.src = premierMin.logo;
+        logo.style.marginLeft = "33%";
 
     premierMinistre.appendChild(description);
     premierMinistre.appendChild(logo);
@@ -61,23 +62,32 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
                     image.src = profil.avatar_url;
                     image.id = "avatar";
 
-                var nom = document.createElement("p");
+                var nom = document.createElement("h1");
                     nom.textContent = profil.name;
 
-                var lien = document.createElement("a");
-                    lien.textContent = profil.html_url;
-                    lien.href = profil.html_url;
+                // var lien = document.createElement("a");
+                //     lien.textContent = profil.html_url;
+                //     lien.href = profil.html_url;
 
-                var repo = document.createElement("p");
-                    repo.textContent = profil.public_repos;
+                var repo = document.createElement("h2");
+                    repo.textContent = profil.public_repos + " Repositories" ;
 
-                var bio = document.createElement("p");
+                var bio = document.createElement("h3");
                     bio.textContent = profil.bio;
 
-                var lieu = document.createElement("p");
+                var lieu = document.createElement("h3");
                     lieu.textContent = profil.location;
 
-                var info = image.outerHTML + nom.outerHTML + lien.outerHTML + repo.outerHTML + bio.outerHTML + lieu.outerHTML;
+                    var button = document.createElement("button");
+                        // button.textContent = "Voir";
+                    var a = document.createElement("a");
+                        a.textContent = "Voir";
+                        a.href = profil.html_url;
+                        button.appendChild(a);
+
+
+
+                var info = image.outerHTML + nom.outerHTML + repo.outerHTML + bio.outerHTML + lieu.outerHTML + button.outerHTML;
 
                     card.innerHTML += "<div class='card'>" + info +"</div>";
             });
