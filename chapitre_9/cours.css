@@ -24,13 +24,13 @@
   float: left;
   margin-left: 4%;
   margin-top: 5%;
-  /* transform-style: preserve-3d;
-  transition: all 1s ease-in-out; */
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
 }
 
 .card:hover {
   box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
-  /* transform: rotateY(180deg); */
+  transform: rotateY(180deg);
 }
 
 h1{
