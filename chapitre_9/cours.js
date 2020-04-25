@@ -41,7 +41,7 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
 
 // choper la div pour afficher les infos
 
-    var infos = document.getElementById("infos");
+    // var infos = document.getElementById("infos");
 
 // choper le form event Submit
     var form = document.querySelector("form");
